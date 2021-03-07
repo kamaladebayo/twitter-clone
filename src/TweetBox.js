@@ -10,13 +10,6 @@ import db from './firebase'
 const TweetBox = () => {
     const [tweetMessage, setTweetMessage] = useState("")
     
-    const handleSetTweet =(e) => {
-        if(e.target.value.length > 0){
-            this.setTweetMessage(tweetMessage);
-            console.log("fffffff");
-            
-        }
-    }
     const sendTweet = (e) => {
         e.preventDefault();
         if(document.getElementById("tweet-input").value.length > 0){
