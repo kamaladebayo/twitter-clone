@@ -41,7 +41,7 @@ const Feed = () => {
             displayName="Kamal Adebayo"
             username="ak01"
             verified={true}
-            text={"Omo Ologo"}
+            text={`Welcome to my twitter clone. All 'tweets' made by you will be anonymous.`}
             avatar="https://i.ibb.co/t40P3ZC/profilepic.png"
             image="https://t.co/lm3UlXnVLP?amp=1"
             />

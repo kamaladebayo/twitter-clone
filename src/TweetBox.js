@@ -10,23 +10,34 @@ import db from './firebase'
 
 const TweetBox = () => {
     const [tweetMessage, setTweetMessage] = useState("")
+    
+    const handleSetTweet =(e) => {
+        if(e.target.value.length > 0){
+            this.setTweetMessage(tweetMessage);
+            console.log("fffffff");
+            
+        }
+    }
     const sendTweet = (e) => {
         e.preventDefault();
-        db.collection('posts').add({
-            displayName: 'Galahad Weston',
-            username: 'galahad',
-            verified: true,
-            text: tweetMessage,
-            avatar: AVATAR,
+        if(document.getElementById("tweet-input").value.length > 0){
 
-        })
+            db.collection('posts').add({
+                displayName: 'Anonymous',
+                username: 'galahad',
+                verified: true,
+                text: tweetMessage,
+                avatar: "https://i.ibb.co/zhb7mMN/anonymous-sm.jpg",
+            })
+        }
+        document.getElementById("tweet-input").value = ""
     }
     return ( 
         <div className="tweet-box">
-            <img src={AVATAR} alt="You" className="tweetBox-avatar"/>
+            <img src="https://i.ibb.co/zhb7mMN/anonymous-sm.jpg" alt="You" className="tweetBox-avatar"/>
             <form>
                 <div className="tweetBox-form">
-                    <input type="text" placeholder="What's happening?" className="tweetBox-texInput" value={tweetMessage} onChange={e => setTweetMessage(e.target.value)}/>
+                    <input type="text" placeholder="What's happening?" className="tweetBox-texInput" id="tweet-input" value={tweetMessage} onChange={e => { e.target.value.length > 0 && setTweetMessage(e.target.value)}}/>
 
                     <div className="tweetBox_footer">
                         <div className="icon-tray">
