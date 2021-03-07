@@ -1,4 +1,3 @@
-import AVATAR from './profilepic.png'
 import { Button } from "@material-ui/core";
 import './TweetBox.css'
 import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
